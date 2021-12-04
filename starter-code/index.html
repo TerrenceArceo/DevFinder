@@ -5,24 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="index.css">
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
 <body>
+  <div id="github-info">
+      
+  </div>
+  <div class="container">
+    <h2>devfinder</h2>
+    <div class="light-dark">
+      <p class="moon">dark <img src="assets/icon-moon.svg" alt="moon"></p>
+      <p class="light">light <img src="assets/icon-sun.svg" alt="sun"></p>
+    </div>
 
-  devfinder
+    <form>
+      <img src="assets/icon-search.svg" alt="magnifying glass">
+      <input type="text" placeholder="Search GitHub username...">
+      <button type="submit" class="btn">Search</button>
+    </form>
 
-  Light
-  Dark
+    <div class="main-content">
 
-  Search GitHub username...
-  Search
+      <img src="#" alt="">
+
+      <div class="main-info">
+        <div class="name-data">
+          <h2>Terrence Arceo</h2>
+          <a href="#">Terrence</a>
+          <p>Joined <span class="date">2021</span></p>
+        </div>
+
+        <p class="bio">This profile has no bio</p>
+
+        <div class="repos-follows">
+          <div class="repos">
+            <p>Repos</p>
+            <p class="repo-num">8</p>
+          </div>
+
+          <div class="followers">
+            <p>Followers</p>
+            <p class="follower-num">3938</p>
+          </div>
+
+          <div class="following">
+            <p>following</p>
+            <p class="following-num">9</p>
+          </div>
+        </div>
+
+        <div class="links">
+          <div class="location-blog">
+            <p class="location"><img src="assets/icon-location.svg" alt="pin">San Diego, CA</p>
+            <a href="#"><img class=""></a>
+          </div>
+          <div class="twitter-company">
+            <a href="#"><img src="assets/icon-twitter.svg" alt="twitter">Not available</a>
+            <a href="#"><img src="assets/icon-company.svg" alt="building icon">@github</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
   Joined
 
   Repos
   Followers
   Following
-
+  <script src="index.js"></script>
 </body>
 </html>
