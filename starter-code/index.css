@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #141d2f;
+    color: #fff;
+}
+
+.container {
+    max-width: 730px;
+    margin: auto;
+}
+
+.light-dark {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*  layout  */
+
+.dev-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    margin-bottom: 0;
+}
+
+form {
+    background: #1e2a47;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+form img {
+    padding: .5em;
+}
+
+input {
+   width: 100%;
+   background: #1e2a47;
+   border: 0;
+   color: #fff;
+}
+
+.btn {
+    background: #0079ff;
+    color: #fff;
+    border: 0;
+    padding: .5em;
+}
