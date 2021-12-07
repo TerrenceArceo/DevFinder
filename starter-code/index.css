@@ -13,6 +13,8 @@ body {
     padding: 0;
     background-color: #141d2f;
     color: #fff;
+    height: 100vh;
+    display: flex;
 }
 
 .container {
@@ -39,18 +41,26 @@ img {
 
 .name {
     margin-bottom: 0;
+    margin-top: 0;
+}
+
+.name-tag {
+    color: #0079ff;
+    text-decoration: none;
 }
 
 form {
+    font-family: 'Space Mono', monospace;
     background: #1e2a47;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
-    border-radius: 10px;
+    padding: .5em;
+    border-radius: 15px;
+    color: #fff;
 }
 
 form img {
-    padding: .5em;
+    padding: .5em 1em;
 }
 
 input {
@@ -58,11 +68,100 @@ input {
    background: #1e2a47;
    border: 0;
    color: #fff;
+   font-size: 18px;
 }
 
 .btn {
     background: #0079ff;
     color: #fff;
     border: 0;
-    padding: .5em;
+    padding: .5em 1.5em;
+    border-radius: 10px;
+}
+
+/*  main content  */
+
+.main-content {
+    background: #1e2a47;
+    margin-top: 2em;
+    padding: 2em;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr minmax(150px, 260px) minmax(150px, 260px);
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: 
+        "image name name"
+        ". info info"
+        ". link link";
+    grid-gap: 1.5em;
+}
+
+.avatar {
+    width: 117px;
+    grid-area: image;
+    padding-right: em;
+}
+
+.avatar img {
+    border-radius: 50%;
+}
+
+.name-link { 
+    grid-area: name;
+    /* background-color: green; */
+}
+
+.name-membership {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.joined-date { 
+    grid-area: name; 
+}
+
+.repos-follows {
+    grid-area: info;
+    display: flex;
+    justify-content: space-around;
+    background-color: #141d2f;
+    border-radius: 10px;
+}
+
+.repos-follows p {
+    margin-bottom: 0;
+}
+
+.repos-follows h2 {
+    margin-top: 0;
+}
+
+.links {
+    grid-area: link;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links p {
+    margin-bottom: 0;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+}
+.links-img {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.location-blog,
+.twitter-company {
+    display: flex;
+    flex-direction: column;
+}
+
+.twitter-company a {
+    margin-top: 10px;
 }
