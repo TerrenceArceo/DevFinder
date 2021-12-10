@@ -83,7 +83,7 @@ input {
     padding: 2em;
     grid-gap: .5em;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 35% auto;
     grid-template-areas: 
         "image name"
         "bio bio"
@@ -164,13 +164,36 @@ input {
 /* ------------------ */
 
 
-@media (min-width: 590px) {
+@media (min-width: 560px) {
     .main-content {
-        grid-template-columns: 25% auto auto;
+        grid-template-columns: 30% auto auto;
         grid-template-areas:
             "image name name"
             "bio bio bio"
             "info info info"
             "footerone . footertwo";
+    }
+}
+
+@media (min-width: 680px) {
+    .main-content {
+        grid-template-columns: 23% auto auto;
+        grid-template-areas: 
+            "image name name"
+            ". bio bio"
+            ". info info"
+            ". footerone footertwo";
+
+            align-items: flex-start;
+    }
+
+    .member {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .bio {
+        margin-top: -45px;
     }
 }
