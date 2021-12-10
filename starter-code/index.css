@@ -20,6 +20,7 @@ body {
 .container {
     max-width: 730px;
     margin: auto;
+    width: 90%;
 }
 
 .light-dark {
@@ -31,22 +32,16 @@ img {
     max-width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 /*  layout  */
 
 .dev-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.name {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-.name-tag {
-    color: #0079ff;
-    text-decoration: none;
 }
 
 form {
@@ -84,44 +79,44 @@ input {
 .main-content {
     background: #1e2a47;
     margin-top: 2em;
-    padding: 2em;
     border-radius: 15px;
+    padding: 2em;
+    grid-gap: .5em;
     display: grid;
-    grid-template-columns: 1fr minmax(150px, 260px) minmax(150px, 260px);
-    grid-template-rows: 1fr auto auto;
+    grid-template-columns: auto auto;
     grid-template-areas: 
-        "image name name"
-        ". info info"
-        ". link link";
-    grid-gap: 1.5em;
+        "image name"
+        "bio bio"
+        "info info"
+        "footerone footerone"
+        "footertwo footertwo";
 }
 
 .avatar {
     width: 117px;
-    grid-area: image;
     padding-right: em;
+    grid-area: image;
 }
 
 .avatar img {
     border-radius: 50%;
 }
 
-.name-link { 
-    grid-area: name;
-    /* background-color: green; */
+.member { grid-area: name;}
+
+
+.name {
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-.name-membership {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.name-tag {
+    color: #0079ff;
 }
 
-.joined-date { 
-    grid-area: name; 
-}
+.bio { grid-area: bio;}
 
-.repos-follows {
+.activity-info {
     grid-area: info;
     display: flex;
     justify-content: space-around;
@@ -129,31 +124,16 @@ input {
     border-radius: 10px;
 }
 
-.repos-follows p {
+.activity-info p {
     margin-bottom: 0;
 }
 
-.repos-follows h2 {
+.activity-info h2 {
     margin-top: 0;
 }
 
-.links {
-    grid-area: link;
-    display: flex;
-    justify-content: space-between;
-}
-
-.links p {
-    margin-bottom: 0;
-}
-
-.links a {
-    color: #fff;
-    text-decoration: none;
-}
 .links-img {
-    margin-right: 10px;
-    color: #fff;
+    margin-right: 1.2em;
 }
 
 .location-blog,
@@ -162,6 +142,35 @@ input {
     flex-direction: column;
 }
 
+.location-blog { grid-area: footerone; }
+.twitter-company { grid-area: footertwo;}
+
+.location-blog a { color: #fff; }
+.twitter-company a { color: #fff; }
+
 .twitter-company a {
     margin-top: 10px;
+}
+
+.location,
+.personal-website,
+.company,
+.twitter {
+    margin-bottom: 0;
+}
+
+/* ------------------ */
+/*  Tablet layout  */
+/* ------------------ */
+
+
+@media (min-width: 590px) {
+    .main-content {
+        grid-template-columns: 25% auto auto;
+        grid-template-areas:
+            "image name name"
+            "bio bio bio"
+            "info info info"
+            "footerone . footertwo";
+    }
 }
