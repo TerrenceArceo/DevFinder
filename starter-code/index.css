@@ -6,6 +6,7 @@
 
 html {
     font-family: 'Space Mono', monospace;
+    font-size: 16px;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 .container {
-    max-width: 730px;
+    max-width: 780px;
     margin: auto;
     width: 90%;
 }
@@ -35,6 +36,13 @@ img {
 a {
     text-decoration: none;
 }
+
+
+/* ---------- */
+/* light theme */
+/* ---------- */
+
+
 
 /*  layout  */
 
@@ -94,7 +102,6 @@ input {
 
 .avatar {
     width: 117px;
-    padding-right: em;
     grid-area: image;
 }
 
@@ -174,6 +181,11 @@ input {
             "footerone . footertwo";
     }
 }
+
+
+/* ------------------ */
+/*  desktop layout  */
+/* ------------------ */
 
 @media (min-width: 680px) {
     .main-content {
