@@ -11,6 +11,7 @@ const acc_website = document.getElementById('personal-website')
 const twitter = document.getElementById('twitter')
 const company = document.getElementById('company')
 const btn = document.getElementById('search')
+const inputVal = document.querySelector('#input')
 
 const getInfo = (info) => {
     const myDate = new Date(info.created_at)
@@ -29,14 +30,21 @@ const getInfo = (info) => {
     repo.textContent = `${info.public_repos}`
     followers.textContent = `${info.followers}`
     following.textContent = `${info.following}`
-    acc_location.innerHTML += `<img src="assets/icon-location.svg" alt="pin" class="links-img"> ${info.location ? info.location : "Not Available"}`
-    acc_website.textContent += `${info.blog ? info.blog : "Not Available"}`
-    twitter.textContent += `${info.twitter_username ? info.twitter_username : "Not Available"}`
-    company.textContent += `${info.company ? info.company : "Not Available"}`
+    acc_location.innerHTML = `<img src="assets/icon-location.svg" alt="pin" class="links-img"> ${info.location ? info.location : "Not Available"}`
+    acc_website.textContent = `${info.blog ? info.blog : "Not Available"}`
+    twitter.textContent = `${info.twitter_username ? info.twitter_username : "Not Available"}`
+    company.textContent = `${info.company ? info.company : "Not Available"}`
 }
 
 fetch('https://api.github.com/users/octocat')
     .then(res => res.json())
     .then(data => getInfo(data))
 
+
+btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    fetch(`https://api.github.com/users/${inputVal.value}`)
+        .then(res => res.json())
+        .then(data => getInfo(data))
+})
 
