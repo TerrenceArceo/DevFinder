@@ -65,7 +65,7 @@ form {
     justify-content: space-between;
     padding: .5em;
     border-radius: 15px;
-    color: #fff;
+    color: var(--font-clr);
 }
 
 form img {
@@ -76,7 +76,7 @@ input {
    width: 100%;
    background: var(--clr-accent);
    border: 0;
-   color: #fff;
+   color: var(--font-clr);
    font-size: 18px;
 }
 
@@ -188,16 +188,6 @@ input {
     }
 }
 
-
-/* ---------- */
-/* Dark theme */
-/* ---------- */
-
-.dark-mode {
-    --clr-bg: #141d2f;
-    --clr-accent: #1e2a47;
-    --font-clr: #fff;
-}
 /* ------------------ */
 /*  desktop layout  */
 /* ------------------ */
@@ -223,4 +213,14 @@ input {
     .bio {
         margin-top: -45px;
     }
+}
+
+/* ---------- */
+/* Dark theme */
+/* ---------- */
+
+.dark-mode {
+    --clr-bg: #141d2f;
+    --clr-accent: #1e2a47;
+    --font-clr: #fff;
 }

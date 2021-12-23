@@ -16,6 +16,32 @@ let darkMode = localStorage.getItem('darkMode')
 const darkModeToggle = document.querySelector('#light-dark')
 
 
+const enableDarkMode = () => {
+    document.getElementById('moon').style.display = 'none';
+    document.getElementById('sun').style.display = 'block';
+    document.body.classList.add('dark-mode')
+
+    localStorage.setItem('darkMode', 'enabled')
+}
+
+const disableDarkMode = () => {
+    document.getElementById('sun').style.display = 'none';
+    document.getElementById('moon').style.display = 'block';
+    document.body.classList.remove('dark-mode')
+
+    localStorage.setItem('darkMode', null)
+}
+
+darkModeToggle.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkMode')
+    if (darkMode !== 'enabled') {
+        enableDarkMode()
+    } else {
+        disableDarkMode()
+    }
+})
+
+
 const getInfo = (info) => {
     const myDate = new Date(info.created_at)
     const month = myDate.getMonth()
@@ -23,11 +49,12 @@ const getInfo = (info) => {
     const day = myDate.getDay();
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", 
     "September", "October", "November", "December"]
+    const link = info.login
     
 
     avatar.innerHTML = `<img src="${info.avatar_url}" alt="avatar">`
     acc_name.textContent = `${info.name}`
-    acc_tag.textContent = `@${info.login}`
+    acc_tag.innerHTML = `@<a href="${link}" class="name-tag" id="tag">${info.login}</a>`
     acc_date.textContent = `${day} ${months[month]} ${year}`
     bio.textContent = `${info.bio ? info.bio : "This Profile has no bio"}`
     repo.textContent = `${info.public_repos}`
@@ -52,9 +79,4 @@ btn.addEventListener('click', (e) => {
             console.log(data)
             getInfo(data)
         })
-})
-
-
-darkModeToggle.addEventListener('click', () => {
-    
 })
