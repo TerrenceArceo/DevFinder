@@ -13,6 +13,7 @@ const company = document.getElementById('company')
 const btn = document.getElementById('search')
 const inputVal = document.querySelector('#input')
 
+
 const getInfo = (info) => {
     const myDate = new Date(info.created_at)
     const month = myDate.getMonth()
@@ -45,6 +46,11 @@ btn.addEventListener('click', (e) => {
     e.preventDefault()
     fetch(`https://api.github.com/users/${inputVal.value}`)
         .then(res => res.json())
-        .then(data => getInfo(data))
+        .then(data =>  {
+            console.log(data)
+            getInfo(data)
+        })
 })
+
+
 
