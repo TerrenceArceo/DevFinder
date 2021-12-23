@@ -12,6 +12,8 @@ const twitter = document.getElementById('twitter')
 const company = document.getElementById('company')
 const btn = document.getElementById('search')
 const inputVal = document.querySelector('#input')
+let darkMode = localStorage.getItem('darkMode')
+const darkModeToggle = document.querySelector('#light-dark')
 
 
 const getInfo = (info) => {
@@ -53,4 +55,6 @@ btn.addEventListener('click', (e) => {
 })
 
 
-
+darkModeToggle.addEventListener('click', () => {
+    
+})

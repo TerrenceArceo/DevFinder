@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --clr-bg: #f6f8FF;
+    --clr-accent: #fefefe;
+    --font-clr: #697c9a;
+}
+
 html {
     font-family: 'Space Mono', monospace;
     font-size: 16px;
@@ -12,8 +18,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
-    color: #2b3442;
+    background-color: var(--clr-bg);
+    color: var(--font-clr);
     height: 100vh;
     display: flex;
 }
@@ -27,6 +33,10 @@ body {
 .light-dark {
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.light-dark:hover {
+    cursor: pointer;
 }
 
 img {
@@ -50,7 +60,7 @@ a {
 
 form {
     font-family: 'Space Mono', monospace;
-    background: #fefefe;
+    background: var(--clr-accent);
     display: flex;
     justify-content: space-between;
     padding: .5em;
@@ -64,7 +74,7 @@ form img {
 
 input {
    width: 100%;
-   background: #fefefe;
+   background: var(--clr-accent);
    border: 0;
    color: #fff;
    font-size: 18px;
@@ -81,7 +91,7 @@ input {
 /*  main content  */
 
 .main-content {
-    background: #fefefe;
+    background: var(--clr-accent);
     margin-top: 2em;
     border-radius: 15px;
     padding: 2em;
@@ -123,7 +133,7 @@ input {
     grid-area: info;
     display: flex;
     justify-content: space-around;
-    background-color: #f2f2f2;
+    background-color: var(--clr-bg);
     border-radius: 10px;
 }
 
@@ -148,8 +158,8 @@ input {
 .location-blog { grid-area: footerone; }
 .twitter-company { grid-area: footertwo;}
 
-.location-blog a { color: #2b3442; }
-.twitter-company a { color: #2b3442; }
+.location-blog a { color: var(--font-clr); }
+.twitter-company a { color: var(--font-clr); }
 
 .twitter-company a {
     margin-top: 10px;
@@ -183,10 +193,11 @@ input {
 /* Dark theme */
 /* ---------- */
 
-.dark-bg {
-    background: #141d2f;
+.dark-mode {
+    --clr-bg: #141d2f;
+    --clr-accent: #1e2a47;
+    --font-clr: #fff;
 }
-
 /* ------------------ */
 /*  desktop layout  */
 /* ------------------ */
