@@ -17,19 +17,21 @@ const darkModeToggle = document.querySelector('#light-dark')
 
 
 const enableDarkMode = () => {
-    document.getElementById('moon').style.display = 'none';
-    document.getElementById('sun').style.display = 'block';
     document.body.classList.add('dark-mode')
 
     localStorage.setItem('darkMode', 'enabled')
+    document.getElementById('moon').style.display = 'none';
+    document.getElementById('sun').style.display = 'block';
+    document.body.style.transition = "250ms ease-in-out"
 }
 
 const disableDarkMode = () => {
-    document.getElementById('sun').style.display = 'none';
-    document.getElementById('moon').style.display = 'block';
     document.body.classList.remove('dark-mode')
 
     localStorage.setItem('darkMode', null)
+    document.getElementById('sun').style.display = 'none';
+    document.getElementById('moon').style.display = 'block';
+    document.body.style.transition = "250ms ease-in-out"
 }
 
 darkModeToggle.addEventListener('click', () => {
@@ -59,13 +61,13 @@ const getInfo = (info) => {
     repo.textContent = `${info.public_repos}`
     followers.textContent = `${info.followers}`
     following.textContent = `${info.following}`
-    acc_location.innerHTML = `<img src="assets/icon-location.svg" alt="pin" class="links-img"> ${info.location ? info.location : "Not Available"}`
+    acc_location.innerHTML = `<img src="starter-code/assets/icon-location.svg" alt="pin" class="links-img"> ${info.location ? info.location : "Not Available"}`
 
-    acc_website.innerHTML = `<p class="personal-website"><img src="assets/icon-website.svg" alt="link icon" class="links-img"><a href="${info.blog}" id="personal-website">${info.blog ? info.blog : "Not Available"}</a></p>`
+    acc_website.innerHTML = `<p class="personal-website"><img src="starter-code/assets/icon-website.svg" alt="link icon" class="links-img"><a href="${info.blog}" id="personal-website">${info.blog ? info.blog : "Not Available"}</a></p>`
 
-    twitter.innerHTML = `<p class="twitter"><img src="assets/icon-twitter.svg" alt="twitter" class="links-img"><a href="${info.twitter_username}" id="twitter">${info.twitter_username ? info.twitter_username : "Not Available"}</a></p>`
+    twitter.innerHTML = `<p class="twitter"><img src="starter-code/assets/icon-twitter.svg" alt="twitter" class="links-img"><a href="${info.twitter_username}" id="twitter">${info.twitter_username ? info.twitter_username : "Not Available"}</a></p>`
 
-    company.innerHTML = `<p class="company"><img src="assets/icon-company.svg" alt="building icon" class="links-img"><a href="${info.company}" id="company">${info.company ? info.company : "Not Available"}</a></p>`
+    company.innerHTML = `<p class="company"><img src="starter-code/assets/icon-company.svg" alt="building icon" class="links-img"><a href="${info.company}" id="company">${info.company ? info.company : "Not Available"}</a></p>`
 }
 
 fetch('https://api.github.com/users/octocat')
