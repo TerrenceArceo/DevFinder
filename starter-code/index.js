@@ -49,21 +49,23 @@ const getInfo = (info) => {
     const day = myDate.getDay();
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", 
     "September", "October", "November", "December"]
-    const link = info.login
     
 
     avatar.innerHTML = `<img src="${info.avatar_url}" alt="avatar">`
     acc_name.textContent = `${info.name}`
-    acc_tag.innerHTML = `@<a href="${link}" class="name-tag" id="tag">${info.login}</a>`
+    acc_tag.textContent = `@${info.login}`
     acc_date.textContent = `${day} ${months[month]} ${year}`
     bio.textContent = `${info.bio ? info.bio : "This Profile has no bio"}`
     repo.textContent = `${info.public_repos}`
     followers.textContent = `${info.followers}`
     following.textContent = `${info.following}`
     acc_location.innerHTML = `<img src="assets/icon-location.svg" alt="pin" class="links-img"> ${info.location ? info.location : "Not Available"}`
-    acc_website.textContent = `${info.blog ? info.blog : "Not Available"}`
-    twitter.textContent = `${info.twitter_username ? info.twitter_username : "Not Available"}`
-    company.textContent = `${info.company ? info.company : "Not Available"}`
+
+    acc_website.innerHTML = `<p class="personal-website"><img src="assets/icon-website.svg" alt="link icon" class="links-img"><a href="${info.blog}" id="personal-website">${info.blog ? info.blog : "Not Available"}</a></p>`
+
+    twitter.innerHTML = `<p class="twitter"><img src="assets/icon-twitter.svg" alt="twitter" class="links-img"><a href="${info.twitter_username}" id="twitter">${info.twitter_username ? info.twitter_username : "Not Available"}</a></p>`
+
+    company.innerHTML = `<p class="company"><img src="assets/icon-company.svg" alt="building icon" class="links-img"><a href="${info.company}" id="company">${info.company ? info.company : "Not Available"}</a></p>`
 }
 
 fetch('https://api.github.com/users/octocat')
@@ -77,6 +79,19 @@ btn.addEventListener('click', (e) => {
         .then(res => res.json())
         .then(data =>  {
             console.log(data)
-            getInfo(data)
+            if (data.message === 'Not Found') {
+                inputVal.style.color = 'red'
+                inputVal.style.textAlign = 'right'
+                inputVal.value = "Not Found"
+                return false
+            }else {
+                getInfo(data)
+            }
         })
+})
+
+inputVal.addEventListener('click', () => {
+    inputVal.style.color = '#697c9a'
+    inputVal.style.textAlign = 'left'
+    inputVal.value = 'Search GitHub username...'
 })

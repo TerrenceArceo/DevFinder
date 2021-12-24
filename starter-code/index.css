@@ -155,8 +155,8 @@ input {
     flex-direction: column;
 }
 
-.location-blog { grid-area: footerone; }
-.twitter-company { grid-area: footertwo;}
+.location-blog { grid-area: footerone; margin-top: 8px;}
+.twitter-company { grid-area: footertwo; }
 
 .location-blog a { color: var(--font-clr); }
 .twitter-company a { color: var(--font-clr); }
@@ -170,6 +170,7 @@ input {
 .company,
 .twitter {
     margin-bottom: 0;
+    margin-top: 10px;
 }
 
 /* ------------------ */
