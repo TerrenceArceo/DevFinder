@@ -115,7 +115,10 @@ input {
     border-radius: 50%;
 }
 
-.member { grid-area: name;}
+.member { 
+    grid-area: name;
+    padding-left: 1em;
+}
 
 
 .name {
